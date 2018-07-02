@@ -1,0 +1,764 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Hit Calibration · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="hitCalibration.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html">
+            
+                    
+                    Hit Calibration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#procedure">
+            
+                    
+                    Procedure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#rescaling">
+            
+                    
+                    Rescaling to MIPs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#reweighting">
+            
+                    
+                    Re-weighting for absorber thickness
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#absolute">
+            
+                    
+                    Shower energy scale
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#software">
+            
+                    
+                    Software Implementation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#uncalib">
+            
+                    
+                    Uncalibrated RecHits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#calib">
+            
+                    
+                    Calibrated RecHits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#finalenergy">
+            
+                    
+                    Final Energy scale
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="hitCalibration.html">
+            
+                <a href="hitCalibration.html#usefulnumbers">
+            
+                    
+                    Useful Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html">
+            
+                    
+                    CaloParticles
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#intro">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#defs">
+            
+                    
+                    Definitions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#general">
+            
+                    
+                    General Informations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#implementation">
+            
+                    
+                    Software Implementation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#graph">
+            
+                    
+                    The Graph
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#products">
+            
+                    
+                    Products
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.2.1" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#simcluster">
+            
+                    
+                    SimCluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.2" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#caloparticle">
+            
+                    
+                    CaloParticle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.3" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#insight">
+            
+                    
+                    More Insight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.4" data-path="../CaloParticles/caloParticles.html">
+            
+                <a href="../CaloParticles/caloParticles.html#creation">
+            
+                    
+                    How they are created
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Hit Calibration</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="procedure">Procedure </h1>
+<p>For a more detailed explanation, please read <a href="https://twiki.cern.ch/twiki/pub/CMS/HGCALSimulationAndPerformance/CalibratedRechits.pdf" target="_blank">this
+document</a>
+Lot&apos;s of useful information can also be found at <a href="https://indico.cern.ch/event/508120/contributions/2028680/attachments/1244672/1832373/HGCal_calibRecHit_16Mar16.pdf#search=arabella%20calibration" target="_blank">this
+link</a>.</p>
+<p>The rechits coming out the detector electronics have a magnitude measured in
+<strong>femtoCoulomb</strong> (<strong>fC</strong>) corresponding to the energy desposited in the active
+thickness of the Si sensor cells. The calibration procedure will start from
+those hits and produce <strong>calibrated</strong> rechits that can be used for clustering
+purposes (hence energy measurements). There are 3 steps involved in the
+calibration procedure:</p>
+<ol>
+<li><p>Equalization of the signal scale to account for the three Si sensor
+thicknesses (3 constants)</p>
+</li>
+<li><p>Equalization of the signal scale to account for the differing absorber
+thicknesses in the 40 layers of the EE and FH (40 constants)</p>
+</li>
+<li><p>Setting the overall scale such that when the signals in a shower are added,
+their sum is a good estimate of the energy of the incoming particle which
+caused the shower (1 constant)</p>
+</li>
+</ol>
+<p>These steps are detailed below.</p>
+<h2 id="rescaling">Rescaling to MIPs </h2>
+<p>In a sampling calorimeter with varying thicknesses of absorber, the energy
+samplings must be reweighted to account for the different absorber thicknesses.
+The actual energy deposited in the sensitive detectors is proportional but not
+identical to the original energy of the incoming particle.</p>
+<p>It is generally agreed that for this purpose the thickness should be measured in
+terms of <script type="math/tex; ">dE/dx</script> (<script type="math/tex; ">\textrm{MeV}/(g/\textrm{cm}^3)</script>)(i.e. one uses the
+integrated energy loss for a MIP in a layer of absorber). This can be considered
+as being due to the fact that the dominant energy absorption process in the
+shower is ionization.</p>
+<p>The first step consists of taking the value in fC coming out of the ADC and
+convert it into <em>average number of MIPs</em>, where the conversion factor is the
+most probable value of the Landau distribution for a MIP in Si, computed for the
+3 different sensors thickness.</p>
+<p>Currently (june 2018, 22:55:15 (UTC+0200)) the <strong>fCperMIP</strong> values are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Si Thickness [<script type="math/tex; ">\mu\textrm{m}</script>]</th>
+<th style="text-align:center">fCperMIP [<script type="math/tex; ">\textrm{fC}</script>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">1.25</td>
+</tr>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:center">2.57</td>
+</tr>
+<tr>
+<td style="text-align:center">300</td>
+<td style="text-align:center">3.88</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reweighting">Re-weighting for absorber thickness </h2>
+<p>Let&apos;s assume now that <script type="math/tex; ">n_i</script> is the <strong>number of equivalent MIPs in the i-th
+sensitive(active) layer</strong>. This number is simply:</p>
+<p><script type="math/tex; ">n_i = \frac{A_i}{\textrm{fCperMIP}}</script></p>
+<p>where the amplitude <script type="math/tex; ">A_i</script> in the i-th active layer is given by:</p>
+<p><script type="math/tex; "> \textrm{ADC_counts}\times\textrm{adcLSB} </script></p>
+<p>and is expressed in fC. The term <script type="math/tex; ">\textrm{adcLSB}</script> is usually computed
+dividing the full range of the input analogue signal (dynamic range) by the
+total amount of (signal) bits available. Those numbers are configuration
+parameters in release.</p>
+<p>We can also safely assume that the average number of MIPs in the i-th
+<strong>passive</strong> layer (i.e. in the <strong>i-th absorber</strong>) is the mean between
+<script type="math/tex; ">n_{i-1}</script> and <script type="math/tex; ">n_i</script>, i.e. the mean between the <strong>preceding active layer
+(<script type="math/tex; ">i-1</script>)</strong> and the <strong>subsequent one (<script type="math/tex; ">i</script>)</strong>.</p>
+<p>The total energy lost in the i-th passive layer is then:</p>
+<p><script type="math/tex; ">E_i = \frac{n_{i-1} + n_i}{2} \times \lambda_i</script></p>
+<p>where</p>
+<p><script type="math/tex; "> \lambda_i = \left(\frac{dE^{absorber}}{dx}\right)_i</script></p>
+<p>The total energy lost in the shower is:</p>
+<p><script type="math/tex; ">\sum_i^{layers} E_i = \sum_i^{layers} \frac{n_{i-1} + n_i}{2} \times
+\lambda_i</script></p>
+<p>This could be rewritten as (boundary conditions at first and last layer to be
+checked and carefully handled):</p>
+<p><script type="math/tex; ">\sum_i^{layers} E_i = \sum_i^{layers} \frac{\lambda_i+\lambda_{i+1}}{2}\times
+n_i </script></p>
+<p>We measure the terms:</p>
+<p><script type="math/tex; ">\lambda_i = \left(\frac{dE^{absorber}}{dx}\right)_i</script></p>
+<p>in MeV, i.e. multiply the <script type="math/tex; ">dE/dx</script> [<script type="math/tex; ">\textrm{Mev}/\textrm{cm}</script>] of the absorber material
+by its thickness [<script type="math/tex; ">\textrm{cm}</script>].</p>
+<blockquote>
+<p><strong>[warning] Warning</strong>
+The above calculation works great for orthogonally incident particles, which is
+never the case we face in reality. The assumption we do is that the
+<script type="math/tex; ">\textrm{fCperMIP}</script> value will scale in the same way as the <script type="math/tex; ">\lambda_i</script>
+parameter, i.e. with the <script type="math/tex; ">cos(\theta)</script> of the incident angle. This is quite
+true but not exactly correct.</p>
+</blockquote>
+<p>Eventually, all energies are converted into <script type="math/tex; ">\textrm{GeV}</script> to comply with the
+official CMS units convention.</p>
+<h2 id="absolute">Shower energy scale </h2>
+<p>The final step is to scale the rechit magnitudes so that their sum approximately
+represents the energy deposited by an electromagnetic shower. We choose to make
+the sum of all rechits with <script type="math/tex; ">E > 1 \textrm{MIP}</script> equal to the true incident
+photon energy.</p>
+<h1 id="software">Software Implementation </h1>
+<p>What has been described in the previous section has been implemented into CMSSW.
+There are few steps to run in order to convert the digital signal received from
+the electronics (in ADC counts) into a calibrated hit. These are documented in
+the following sections.</p>
+<h2 id="uncalib">Uncalibrated RecHits </h2>
+<p>The <code>C++</code> module responsible for the creation of the un-calibrated rechits
+is
+<a href="https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecProducers/plugins/HGCalUncalibRecHitProducer.cc" target="_blank"><code>HGCalUncalibRecHitProducer</code></a>,
+configured with the python label <code>HGCalUncalibRecHit</code>. The main goal of this
+module is to convert the input HGCAL Digis, which are measured in ADC count,
+into rechits whose amplitude is expressed in terms of average number of MIPs.
+The module is also configured so that it can dynamically convert ADC counts into
+a real amplitide, measured in <script type="math/tex; ">\textrm{fC}</script>, which is then normalised to MIP,
+depending on the thickness of the sensor. Internally, all the heavy lifting is
+done by a plugin, acting as a worker. The plugin to load is specified in the
+configuration itself and is dynamically loaded following the standard procedure
+in cmssw. The currently (29 june 2018, 12:09:21 (UTC+0200)) configured
+plugin/worker is
+<a href="https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecProducers/plugins/HGCalUncalibRecHitWorkerWeights.cc" target="_blank"><code>HGCalUncalibRecHitWorkerWeights</code></a>.
+Under the hood, one level deeper, the module that is responsible of making this
+conversion is
+<a href="https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecAlgos/interface/HGCalUncalibRecHitRecWeightsAlgo.h" target="_blank"><code>HGCalUncalibRecHitRecWeightsAlgo&lt;HGCHEDataFrame&gt;</code></a>
+via the <code>makeRecHit</code> method.</p>
+<blockquote>
+<p><strong>[info] Info</strong>
+The takeway message is that the product produced by the
+<code>HGCalUncalibRecHitProducer</code> is a collection of HGCal un-calibrated rechits
+(<code>edm::SortedCollection&lt;HGCUncalibratedRecHit&gt;</code>) whose <code>amplitude</code>
+method will result in the average number of MIPs corresponding to the measured
+signal for that specific Silicon detector.</p>
+</blockquote>
+<p>This implements the <a href="#rescaling">rescale</a> section.</p>
+<h2 id="calib">Calibrated RecHits </h2>
+<p>The <code>C++</code> module responsible for the creation of the calibrated rechits is
+<a href="https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecProducers/plugins/HGCalRecHitProducer.cc" target="_blank"><code>HGCalRecHitProducer</code></a>
+configured with the python label <code>HGCalRecHit</code>. Also in this case, all the
+heavy lifting is internally done by an external plugin, loaded using the
+canonical cmssw mechanism, and configured via python. The currently
+(29 juin 2018, 14:29:44 (UTC+0200)) configured plugin is
+<a href="https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecProducers/plugins/HGCalRecHitWorkerSimple.cc" target="_blank"><code>HGCalRecHitWorkerSimple</code></a>.
+The plugin will loop over all the input collection (EE, FH and BH uncalibrated
+rechits, separately), and call the <code>run</code> method of its own configured
+plugin/worker. The worker itself will outsource much of its duties to another
+<code>C++</code> object:
+<a href="https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecAlgos/interface/HGCalRecHitSimpleAlgo.h" target="_blank"><code>HGCalRecHitSimpleAlgo</code></a>.
+The main plugin will read the weights for each single layer from the
+configuration file and pass them down to its internal <code>worker</code>. This will read
+each hit, one by one, determine to which layer is belongs to and rescale its
+<code>amplitude</code> by the weights, eventually converting it from <script type="math/tex; ">\textrm{MeV}</script>
+to <script type="math/tex; ">\textrm{GeV}</script>. This step is implementing the equation:</p>
+<p><script type="math/tex; ">E_i = \frac{\lambda_i+\lambda_{i+1}}{2}\times n_i</script></p>
+<p>where the input weights are, in fact, the factors:</p>
+<p><script type="math/tex; ">\frac{\lambda_i+\lambda_{i+1}}{2}</script></p>
+<p>as derived directly from the Geant4 simulation.</p>
+<h2 id="finalenergy">Final Energy Scale </h2>
+<p>Currently the <a href="#absolute">final calibration energy</a> has been implemented only at
+<code>particleFlow</code> level, in particular only in the context of <code>realistic
+SimClusters</code>, which are the truth-based reconstruction of HGCAL that is feed
+into Particle Flow. The <code>C++</code> module that is responsible of the creation of the
+realistic SimClusters and of their validation is <code>PFClusterProducer</code> with the
+python label <code>particleFlowClusterHGCal</code>. The python configuration of the module
+contains 2 sets of eta-binned energy corrections, one for <code>egamma</code> objects and
+one for <code>hadronic</code> objects.</p>
+<blockquote>
+<p><strong>[warning] Warning</strong>
+At present this distinction is guaranteed by the fact that this step is
+derived from Monte Carlo truth information. In the real life either we need to
+find a unique set of constants or, better, find a fully reconstruction based way
+to distinguish between the 2 types.</p>
+</blockquote>
+<p>Also in this case, most of the heavy lifting is done by an external worker
+loaded via the usual cmssw plugin mechanism. This is
+<a href="https://github.com/cms-sw/cmssw/blob/master/RecoParticleFlow/PFClusterProducer/plugins/SimMappers/RealisticSimClusterMapper.cc" target="_blank"><code>RealisticSimClusterMapper</code></a>.
+The output of this module is a collection of <code>PFClusters</code> that will have the
+<code>energy</code> set to the <strong>uncorrected one</strong>, and the <code>correctedEnergy</code> set to the
+<strong>corrected</strong> one.</p>
+<blockquote>
+<p><strong>[danger] Danger</strong>
+The <code>PFCluster</code>s derived from the <code>MultiClusters</code> <strong>will not have this final
+calibration applied</strong>.</p>
+</blockquote>
+<h1 id="usefulnumbers">Useful numbers </h1>
+<ul>
+<li>Typically, for <script type="math/tex; ">300 \mu\textrm{m}</script> thick Si sensor, a MIP will deposit the
+equivalent of <script type="math/tex; ">73 e^-/\mu\textrm{m}</script></li>
+<li>Hence, for an orthogonally incident MIP particle, we will measure a charge
+deposit of <script type="math/tex; ">73\times300 e^-</script>, i.e. <script type="math/tex; ">\sim 22K e^- \Rightarrow \sim 3.5E^{-15}
+  \textrm{C} = 3.5 \textrm{fC}</script>, to be compared with the quoted value of
+<script type="math/tex; ">3.88</script> listed in the table above.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="hitCalibration.html#procedure" class="navigation navigation-next " aria-label="Next page: Procedure">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Hit Calibration","level":"1.2","depth":1,"next":{"title":"Procedure","level":"1.2.1","depth":2,"anchor":"#procedure","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#procedure","articles":[{"title":"Rescaling to MIPs","level":"1.2.1.1","depth":3,"anchor":"#rescaling","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#rescaling","articles":[]},{"title":"Re-weighting for absorber thickness","level":"1.2.1.2","depth":3,"anchor":"#reweighting","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#reweighting","articles":[]},{"title":"Shower energy scale","level":"1.2.1.3","depth":3,"anchor":"#absolute","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#absolute","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","alerts","code"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"alerts":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"HitCalibration/hitCalibration.md","mtime":"2018-06-29T14:18:36.130Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-02T11:43:34.055Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
