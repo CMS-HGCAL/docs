@@ -2,8 +2,13 @@
 
 For a more detailed explanation, please read [this
 document](https://twiki.cern.ch/twiki/pub/CMS/HGCALSimulationAndPerformance/CalibratedRechits.pdf)
-Lot's of useful information can also be found at [this
+Lots of useful information can also be found at [this
 link](https://indico.cern.ch/event/508120/contributions/2028680/attachments/1244672/1832373/HGCal_calibRecHit_16Mar16.pdf#search=arabella%20calibration).
+
+> **[info] Info**
+> For further information, especially related to the TDR geometry that is being
+delivered in July 2018, refer to [this
+talk](https://indico.cern.ch/event/740826/contributions/3058501/attachments/1678687/2696151/CalibratedRecHits.pdf).
 
 The rechits coming out the detector electronics have a magnitude measured in
 **femtoCoulomb** (**fC**) corresponding to the energy desposited in the active
@@ -16,7 +21,7 @@ calibration procedure:
    thicknesses (3 constants)
 
 1. Equalization of the signal scale to account for the differing absorber
-   thicknesses in the 40 layers of the EE and FH (40 constants)
+   thicknesses in the 52 layers of HGCAL (52 constants)
 
 1. Setting the overall scale such that when the signals in a shower are added,
    their sum is a good estimate of the energy of the incoming particle which
@@ -41,6 +46,12 @@ The first step consists of taking the value in fC coming out of the ADC and
 convert it into *average number of MIPs*, where the conversion factor is the
 most probable value of the Landau distribution for a MIP in Si, computed for the
 3 different sensors thickness.
+
+The following figure, taken from the PDG document linked in the
+[reading](#reading) section, helps understanding the situation better:
+
+![Bethe-Block and MPV value from Landau/Vavilov/Bichsel](EnergyLoss_MPV_Landau.png)
+![Most probable energy loss, scaled to the mean loss of a MIP in Silicon](MPV_dEdx_min_Si.png)
 
 Currently (june 2018, 22:55:15 (UTC+0200)) the **fCperMIP** values are:
 
@@ -213,12 +224,27 @@ The output of this module is a collection of `PFClusters` that will have the
 calibration applied**.
 
 
+## Configuration files {#config}
+
+* [Uncalibrated RecHits](https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecProducers/python/HGCalUncalibRecHit_cfi.py)
+* [Calibrated RecHits](https://github.com/cms-sw/cmssw/blob/master/RecoLocalCalo/HGCalRecProducers/python/HGCalRecHit_cfi.py)
+* [PFCluster Calibration](https://github.com/cms-sw/cmssw/blob/master/RecoParticleFlow/PFClusterProducer/python/particleFlowRealisticSimClusterHGCCalibrations_cfi.py)
+
 
 # Useful numbers {#usefulnumbers}
 
+* The density of Silicon is 2.328 $$\textrm{g}/\textrm{cm}^3$$
+* The value of $$\frac{\textrm{dE}}{\textrm{dx}}\rvert_{\textrm{min}}$$ is 1.664
+$$\textrm{MeV} \textrm{g}^{-1} \textrm{cm}^2$$, i.e., 3.88
+$$\textrm{MeV}/\textrm{cm}$$ (i.e. $$388 \textrm{eV}/\mu\textrm{m}$$)
+* Energy required to create an e-h in Silicon is $$3.62 \textrm{eV}$$
 * Typically, for $$300 \mu\textrm{m}$$ thick Si sensor, a MIP will deposit the
   equivalent of $$73 e^-/\mu\textrm{m}$$
 * Hence, for an orthogonally incident MIP particle, we will measure a charge
   deposit of $$73\times300 e^-$$, i.e. $$\sim 22K e^- \Rightarrow \sim 3.5E^{-15}
   \textrm{C} = 3.5 \textrm{fC}$$, to be compared with the quoted value of
   $$3.88$$ listed in the table above.
+
+# Further Reading {#reading}
+
+* PDG: [Passage of particles through matter](http://pdg.lbl.gov/2017/reviews/rpp2017-rev-passage-particles-matter.pdf)
