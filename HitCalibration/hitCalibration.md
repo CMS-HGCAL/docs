@@ -250,9 +250,11 @@ Rescaled for the thickness, we have $$300 * 284 \textrm{eV} = 85200
 * If we consider the energy needed to create an $$e^{-}-h = 3.62 \textrm{eV}$$
 and the charge of the electron, we deduce that the corresponding
 $$\textrm{fCperMIP}$$ factor is:
-$$\textrm{fCperMIP} = (300\mu\textrm{m}\times 284
-\textrm{eV}\mu\textrm{m}^{-1}/(3.62 \textrm{eV}))\times 1.6E^{-4} \textrm{fC} =
-3.76$$, not far away from the quoted value of $$3.88$$
+
+$$
+\textrm{fCperMIP} = (300\mu\textrm{m}\times 284\textrm{eV}\mu\textrm{m}^{-1}/(3.62 \textrm{eV}))\times 1.6E^{-4} \textrm{fC} = 3.76
+$$,
+not far away from the quoted value of $$3.88$$
 
 # Further Reading {#reading}
 
