@@ -537,11 +537,14 @@ integrated energy loss for a MIP in a layer of absorber). This can be considered
 as being due to the fact that the dominant energy absorption process in the
 shower is ionization.</p>
 <p>The first step consists of taking the value in fC coming out of the ADC and
-convert it into <em>average number of MIPs</em>, where the conversion factor is the
-most probable value of the Landau distribution for a MIP in Si, computed for the
-3 different sensors thickness.</p>
-<p>The following figure, taken from the PDG document linked in the
-<a href="#reading">reading</a> section, helps understanding the situation better:</p>
+convert it into <strong>average number of MIPs</strong>, where the conversion factor is the
+<strong>most probable value of the Landau distribution for a MIP in Si</strong>, computed for
+the 3 different sensors&apos; thickness. On the advantages of using the most probable
+value, as can be seen in the pictures below, is that it is rather stable as a
+function of the incoming particle energy: this is definitely not true for the
+<script type="math/tex; ">\textrm{dE}/\textrm{dx}\rvert_{\textrm{min}}</script>.</p>
+<p>The following figures, taken from the PDG document linked in the
+<a href="#reading">reading</a> section, help understanding the situation better:</p>
 <p><img src="EnergyLoss_MPV_Landau.png" alt="Bethe-Block and MPV value from Landau/Vavilov/Bichsel">
 <img src="MPV_dEdx_min_Si.png" alt="Most probable energy loss, scaled to the mean loss of a MIP in Silicon"></p>
 <p>Currently (june 2018, 22:55:15 (UTC+0200)) the <strong>fCperMIP</strong> values are:</p>
@@ -705,13 +708,19 @@ calibration applied</strong>.</p>
 <li>The value of <script type="math/tex; ">\frac{\textrm{dE}}{\textrm{dx}}\rvert_{\textrm{min}}</script> is 1.664
 <script type="math/tex; ">\textrm{MeV} \textrm{g}^{-1} \textrm{cm}^2</script>, i.e., 3.88
 <script type="math/tex; ">\textrm{MeV}/\textrm{cm}</script> (i.e. <script type="math/tex; ">388 \textrm{eV}/\mu\textrm{m}</script>)</li>
-<li>Energy required to create an e-h in Silicon is <script type="math/tex; ">3.62 \textrm{eV}</script></li>
-<li>Typically, for <script type="math/tex; ">300 \mu\textrm{m}</script> thick Si sensor, a MIP will deposit the
-equivalent of <script type="math/tex; ">73 e^-/\mu\textrm{m}</script></li>
-<li>Hence, for an orthogonally incident MIP particle, we will measure a charge
-deposit of <script type="math/tex; ">73\times300 e^-</script>, i.e. <script type="math/tex; ">\sim 22K e^- \Rightarrow \sim 3.5E^{-15}
-  \textrm{C} = 3.5 \textrm{fC}</script>, to be compared with the quoted value of
-<script type="math/tex; ">3.88</script> listed in the table above.</li>
+<li>The energy required to create an e-h in Silicon is <script type="math/tex; ">3.62 \textrm{eV}</script></li>
+<li>The most probable energy loss value for in <script type="math/tex; ">300 \mu\textrm{m}</script> Silicon (it can
+be extracted from the plots in the <a href="#rescale"><em>Rescaling to MIPs</em></a>) section is
+<script type="math/tex; ">\sim 1.22 \textrm{MeV} \textrm{g}^{-1} \textrm{cm}^2 = 2.84 \textrm{MeV}
+\textrm{cm}^{-1}</script>.
+Rescaled for the thickness, we have <script type="math/tex; ">300 * 284 \textrm{eV} = 85200
+\textrm{eV}</script>.</li>
+<li>If we consider the energy needed to create an <script type="math/tex; ">e^{-}-h = 3.62 \textrm{eV}</script>
+and the charge of the electron, we deduce that the corresponding
+<script type="math/tex; ">\textrm{fCperMIP}</script> factor is:
+<script type="math/tex; ">\textrm{fCperMIP} = (300\mu\textrm{m}\times 284
+\textrm{eV}\mu\textrm{m}^{-1}/(3.62 \textrm{eV}))\times 1.6E^{-4} \textrm{fC} =
+3.76</script>, not far away from the quoted value of <script type="math/tex; ">3.88</script></li>
 </ul>
 <h1 id="reading">Further Reading </h1>
 <ul>
@@ -760,7 +769,7 @@ deposit of <script type="math/tex; ">73\times300 e^-</script>, i.e. <script type
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hit Calibration","level":"1.2","depth":1,"next":{"title":"Procedure","level":"1.2.1","depth":2,"anchor":"#procedure","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#procedure","articles":[{"title":"Rescaling to MIPs","level":"1.2.1.1","depth":3,"anchor":"#rescaling","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#rescaling","articles":[]},{"title":"Re-weighting for absorber thickness","level":"1.2.1.2","depth":3,"anchor":"#reweighting","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#reweighting","articles":[]},{"title":"Shower energy scale","level":"1.2.1.3","depth":3,"anchor":"#absolute","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#absolute","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","alerts","code"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"alerts":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"HitCalibration/hitCalibration.md","mtime":"2018-07-02T20:33:39.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-02T21:12:13.331Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hit Calibration","level":"1.2","depth":1,"next":{"title":"Procedure","level":"1.2.1","depth":2,"anchor":"#procedure","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#procedure","articles":[{"title":"Rescaling to MIPs","level":"1.2.1.1","depth":3,"anchor":"#rescaling","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#rescaling","articles":[]},{"title":"Re-weighting for absorber thickness","level":"1.2.1.2","depth":3,"anchor":"#reweighting","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#reweighting","articles":[]},{"title":"Shower energy scale","level":"1.2.1.3","depth":3,"anchor":"#absolute","path":"HitCalibration/hitCalibration.md","ref":"HitCalibration/hitCalibration.md#absolute","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","alerts","code","livereload"],"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"alerts":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"HitCalibration/hitCalibration.md","mtime":"2018-07-03T11:49:41.040Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-03T11:55:26.124Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -783,6 +792,10 @@ deposit of <script type="math/tex; ">73\times300 e^-</script>, i.e. <script type
     
         
         <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

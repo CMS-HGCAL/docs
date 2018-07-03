@@ -43,12 +43,15 @@ as being due to the fact that the dominant energy absorption process in the
 shower is ionization.
 
 The first step consists of taking the value in fC coming out of the ADC and
-convert it into *average number of MIPs*, where the conversion factor is the
-most probable value of the Landau distribution for a MIP in Si, computed for the
-3 different sensors thickness.
+convert it into **average number of MIPs**, where the conversion factor is the
+**most probable value of the Landau distribution for a MIP in Si**, computed for
+the 3 different sensors' thickness. On the advantages of using the most probable
+value, as can be seen in the pictures below, is that it is rather stable as a
+function of the incoming particle energy: this is definitely not true for the
+$$\textrm{dE}/\textrm{dx}\rvert_{\textrm{min}}$$.
 
-The following figure, taken from the PDG document linked in the
-[reading](#reading) section, helps understanding the situation better:
+The following figures, taken from the PDG document linked in the
+[reading](#reading) section, help understanding the situation better:
 
 ![Bethe-Block and MPV value from Landau/Vavilov/Bichsel](EnergyLoss_MPV_Landau.png)
 ![Most probable energy loss, scaled to the mean loss of a MIP in Silicon](MPV_dEdx_min_Si.png)
@@ -237,13 +240,19 @@ calibration applied**.
 * The value of $$\frac{\textrm{dE}}{\textrm{dx}}\rvert_{\textrm{min}}$$ is 1.664
 $$\textrm{MeV} \textrm{g}^{-1} \textrm{cm}^2$$, i.e., 3.88
 $$\textrm{MeV}/\textrm{cm}$$ (i.e. $$388 \textrm{eV}/\mu\textrm{m}$$)
-* Energy required to create an e-h in Silicon is $$3.62 \textrm{eV}$$
-* Typically, for $$300 \mu\textrm{m}$$ thick Si sensor, a MIP will deposit the
-  equivalent of $$73 e^-/\mu\textrm{m}$$
-* Hence, for an orthogonally incident MIP particle, we will measure a charge
-  deposit of $$73\times300 e^-$$, i.e. $$\sim 22K e^- \Rightarrow \sim 3.5E^{-15}
-  \textrm{C} = 3.5 \textrm{fC}$$, to be compared with the quoted value of
-  $$3.88$$ listed in the table above.
+* The energy required to create an e-h in Silicon is $$3.62 \textrm{eV}$$
+* The most probable energy loss value for in $$300 \mu\textrm{m}$$ Silicon (it can
+be extracted from the plots in the [*Rescaling to MIPs*](#rescale)) section is
+$$\sim 1.22 \textrm{MeV} \textrm{g}^{-1} \textrm{cm}^2 = 2.84 \textrm{MeV}
+\textrm{cm}^{-1}$$.
+Rescaled for the thickness, we have $$300 * 284 \textrm{eV} = 85200
+\textrm{eV}$$.
+* If we consider the energy needed to create an $$e^{-}-h = 3.62 \textrm{eV}$$
+and the charge of the electron, we deduce that the corresponding
+$$\textrm{fCperMIP}$$ factor is:
+$$\textrm{fCperMIP} = (300\mu\textrm{m}\times 284
+\textrm{eV}\mu\textrm{m}^{-1}/(3.62 \textrm{eV}))\times 1.6E^{-4} \textrm{fC} =
+3.76$$, not far away from the quoted value of $$3.88$$
 
 # Further Reading {#reading}
 
